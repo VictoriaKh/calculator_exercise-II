@@ -20,6 +20,20 @@ while True:
             print("You did not enter numbers.")
             test = 1
             break
+    
+    number2_list = ['+', '-', '*', '/', 'pow', 'mod']
+
+    if tokens[0] in number2_list:
+        if len(numbers) < 2:
+            print('Not enough numbers.')
+            test = 1
+    number1_list = ['square', 'cube']
+
+    if tokens[0] in number1_list:
+        if len(numbers) < 1:
+            print ('Not enough numbers.')
+            test = 1
+            
     if test == 1:
         continue
 
