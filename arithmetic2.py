@@ -11,8 +11,8 @@ def add(nums):
 
 def subtract(nums):
     """Return the second number subtracted from the first."""
-    
-    for num in nums:
+    total = nums[0]
+    for num in nums[1:]:
         total = total - num
     return total
 
@@ -23,13 +23,19 @@ def multiply(nums):
         total = total * num
     return total
 
-def divide(num1, num2):
+def divide(nums):
     """Divide the first input by the second and return the result."""
-    return num1 / num2
+    total = nums[0]
+    for num in nums[1:]:
+        total = total / num
+    return total
 
-def square(num1):
+def square(nums):
     """Return the square of the input."""
-    return num1 * num1
+    squares = []
+    for num in nums:
+        squares.append(num * num)
+    return squares
 
 def cube(num1):
     """Return the cube of the input."""
