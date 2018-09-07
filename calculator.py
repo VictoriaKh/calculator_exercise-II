@@ -11,22 +11,38 @@ from arithmetic import *
 while True:
     user_input = input("Enter the calculation type and numbers separated by space: ")
     tokens = user_input.split(" ")
+    numbers = []
+    test = 0
+    for token in tokens[1:]:
+        try:
+            numbers.append(float(token))
+        except:
+            print("You did not enter numbers.")
+            test = 1
+            break
+    if test == 1:
+        continue
+
     if tokens[0] == 'q':
         break
     elif tokens[0] == '+':
-        print(add(float(tokens[1]),float(tokens[2])))
+        print(add(numbers[0],numbers[1]))
     elif tokens[0] == '-':
-        print(subtract(float(tokens[1]),float(tokens[2])))
+        print(subtract(numbers[0], numbers[1]))
     elif tokens[0] == '*':
-        print(multiply(float(tokens[1]),float(tokens[2])))
+        print(multiply(numbers[0], numbers[1]))
     elif tokens[0] == '/':
-        print(divide(float(tokens[1]),float(tokens[2])))
+        print(divide(numbers[0], numbers[1]))
     elif tokens[0] == 'square':
-        print(square(float(tokens[1])))
+        print(square(numbers[0]))
     elif tokens[0] == 'cube':
-        print(cube(float(tokens[1])))
+        print(cube(numbers[0]))
     elif tokens[0] == 'pow':
-        print(power(float(tokens[1]),float(tokens[2])))
+        print(power(numbers[0], numbers[1]))
     elif tokens[0] == 'mod':
-        print(mod(float(tokens[1]),float(tokens[2])))
+        print(mod(numbers[0], numbers[1]))
+    else:
+        print("Incorrect command.")
+
+
 
